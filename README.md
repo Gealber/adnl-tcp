@@ -3,7 +3,7 @@
 Following description in this [ADNL TCP - Liteserver](https://docs.ton.org/develop/network/adnl-tcp). This implementation is just for learning purpose a full implementation can be found in [tonutils-go](https://github.com/xssnick/tonutils-go/tree/master).
 
 The only operation supported is the initial handshake.
-1. [DONE] Handshake connection
+1. ✅ Handshake connection
 
 As this is for educational purpose, and there are full libraries already implementing it, there's no sense on extending this more. Is a good idea as a educational project tho.
 
