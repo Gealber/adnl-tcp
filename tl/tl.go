@@ -6,6 +6,7 @@ import (
 
 // EncodeByteArray encode array according to
 // https://docs.ton.org/develop/data-formats/tl#encoding-bytes-array
+// not used at this moment but wanted to implement it as well
 func EncodeByteArray(data []byte) []byte {
 	dataSize := len(data)
 
