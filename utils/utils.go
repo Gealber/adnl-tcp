@@ -92,6 +92,7 @@ func KeyID(key []byte) ([]byte, error) {
 	}
 
 	// https://github.com/ton-blockchain/ton/blob/24dc184a2ea67f9c47042b4104bbb4d82289fac1/crypto/block/check-proof.cpp#L488
+	// what the hell is this?
 	magic := []byte{0xc6, 0xb4, 0x13, 0x48}
 	hash := sha256.New()
 	hash.Write(magic)
