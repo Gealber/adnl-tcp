@@ -5,7 +5,6 @@ import (
 	"crypto/rand"
 	"errors"
 	"fmt"
-	mathRand "math/rand"
 	"testing"
 
 	"github.com/Gealber/adnl-tcp/tl"
@@ -35,32 +34,6 @@ func Test_EncodeByteArray(t *testing.T) {
 
 		expectedResult := externalTL.ToBytes(data)
 		result := tl.EncodeByteArray(data)
-
-		err = errorCheck(result, expectedResult)
-		if err != nil {
-			t.Fatal(err)
-		}
-	})
-}
-
-func Test_Serialize(t *testing.T) {
-	t.Run("serialize ping command struct", func(t *testing.T) {
-		type PingCmd struct {
-			ID int64 `tl:"long"`
-		}
-
-		id := mathRand.Uint32()
-		cmd := PingCmd{ID: int64(id)}
-		externalTL.Register(cmd, "tcp.ping random_id:long = tcp.Pong")
-
-		expectedResult, err := externalTL.Serialize(&cmd, true)
-		if err != nil {
-			t.Fatal(err)
-		}
-
-		fmt.Println("CMD DATA: ", expectedResult)
-
-		result := tl.Serialize(&cmd)
 
 		err = errorCheck(result, expectedResult)
 		if err != nil {

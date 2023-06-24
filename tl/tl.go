@@ -16,14 +16,6 @@ func EncodeByteArray(data []byte) []byte {
 	return encodeLargeArray(data)
 }
 
-// Serialize a struct into array of bytes according to TL.
-// https://core.telegram.org/mtproto/TL
-func Serialize(obj any) []byte {
-	result := make([]byte, 0)
-
-	return result
-}
-
 func encodeLargeArray(data []byte) []byte {
 	resultSize := len(data) + 4
 	resultSize += (resultSize % 4)
